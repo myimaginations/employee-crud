@@ -1,0 +1,85 @@
+<div class="container">
+
+  <h2>Employee Management</h2>
+
+  <div class="form-area">
+    <h3>{{ isEditMode ? 'Edit Employee' : 'Add Employee' }}</h3>
+
+    <form (ngSubmit)="submit()">
+
+      <div>
+        <label for="name">Name*</label>
+        <input id="name" name="name" placeholder="Enter name"
+               [(ngModel)]="formModel.name" required />
+      </div>
+
+      <div>
+        <label for="email">Email*</label>
+        <input id="email" name="email" type="email" placeholder="Enter email"
+               [(ngModel)]="formModel.email" required />
+      </div>
+
+      <div>
+        <label for="position">Position</label>
+        <input id="position" name="position" placeholder="Enter position"
+               [(ngModel)]="formModel.position" />
+      </div>
+
+      <div>
+        <label for="salary">Salary</label>
+        <input id="salary" name="salary" type="number" placeholder="Enter salary"
+               [(ngModel)]="formModel.salary" />
+      </div>
+
+      <div>
+        <label for="state">State</label>
+        <select id="state" name="state" title="Select state"
+                [(ngModel)]="formModel.state">
+          <option value="">-- Select State --</option>
+          <option *ngFor="let s of states" [value]="s.name">{{ s.name }}</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button type="submit">{{ isEditMode ? 'Update' : 'Add' }}</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+      </div>
+
+    </form>
+
+    <div class="message" *ngIf="message">{{ message }}</div>
+  </div>
+
+  <hr />
+
+  <h3>Employee List</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>State</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let e of employees">
+        <td>{{ e.id }}</td>
+        <td>{{ e.name }}</td>
+        <td>{{ e.email }}</td>
+        <td>{{ e.position }}</td>
+        <td>{{ e.salary | salaryFormat }}</td>
+        <td>{{ e.state }}</td>
+        <td>
+          <button (click)="edit(e)">Edit</button>
+          <button (click)="delete(e)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

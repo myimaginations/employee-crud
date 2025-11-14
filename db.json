@@ -1,0 +1,54 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Animesh",
+      "email": "animesh@example.com",
+      "position": "Developer",
+      "salary": 50000,
+      "state": "Bihar"
+    },
+    {
+      "id": "2",
+      "name": "Shrilaxmi",
+      "email": "shri@example.com",
+      "position": "Designer",
+      "salary": 52000,
+      "state": "Karnataka"
+    },
+    {
+      "id": "881e",
+      "name": "Preeti",
+      "email": "pritisahani4444@gmail.com",
+      "position": "Intern",
+      "salary": 23000,
+      "state": "Uttar Pradesh"
+    }
+  ],
+  "states": [
+    {
+      "id": "1",
+      "name": "Karnataka"
+    },
+    {
+      "id": "2",
+      "name": "Mysore"
+    },
+    {
+      "id": "3",
+      "name": "Tamil Nadu"
+    },
+    {
+      "id": "4",
+      "name": "Bihar"
+    },
+    {
+      "id": "5",
+      "name": "Kerala"
+    },
+    {
+      "id": "6",
+      "name": "Uttar Pradesh"
+    }
+  ]
+}

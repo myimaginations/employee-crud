@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { EmployeeComponent } from './employee/employee.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [EmployeeComponent],
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'employee-crud';
-}
+export class AppComponent {}
