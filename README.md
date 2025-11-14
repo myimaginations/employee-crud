@@ -1,59 +1,120 @@
-# EmployeeCrud
+# Angular Employee CRUD Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.17.
+A simple and clean **Employee Management CRUD Application** built using **Angular 17** with a **JSON Server backend**.  
+The project demonstrates full CRUD operations, dynamic state loading through a service, and a custom salary formatting pipe.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
+### ✔ CRUD Operations
+- Add Employee  
+- Edit Employee  
+- Delete Employee  
+- List All Employees  
+
+### ✔ Employee Fields
+Each employee contains:
+- `id` (auto-generated)
+- `name`
+- `email`
+- `position`
+- `salary`
+- `state`
+
+### ✔ Dynamic State Dropdown
+- States fetched from JSON Server  
+- No hardcoding in the component  
+- Loaded using a StateService  
+
+### ✔ Custom Salary Pipe
+- Displays salary like: **₹50,000**
+
+### ✔ JSON Server Backend
+- Stores employees & states in `db.json`
+- Provides REST API endpoints used by Angular
+
+---
+
+## Project Structure
+
+```
+src/app
+│
+├── employee/
+│   ├── employee.component.ts
+│   ├── employee.component.html
+│   └── employee.component.css
+│
+├── services/
+│   ├── employee.service.ts
+│   └── state.service.ts
+│
+└── pipes/
+    └── salary-format.pipe.ts
+```
+
+---
+
+## Technologies Used
+- Angular 17+
+- TypeScript
+- JSON Server
+- RxJS Observables
+- HTML & CSS
+
+---
+
+## 🏃‍♂️ How to Run the Project
+
+### 1️.Install Dependencies
+```
+npm install
+```
+
+### 2️.Start JSON Server
+```
+json-server --watch db.json --port 3000
+```
+
+Backend runs at:
+```
+http://localhost:3000
+```
+
+### 3️.Start Angular App
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+App runs at:
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 🌐 API Endpoints
+
+### Employees
+```
+GET     /employees
+POST    /employees
+PUT     /employees/:id
+DELETE  /employees/:id
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
+### States
+```
+GET /states
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Author
+**Preeti Sahani**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+This project is for educational and learning purposes.
